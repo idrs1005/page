@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/assets/jquery-1.10.1.min.js"><\/script>')</script>
+  <script src="/assets/jquery.hashchange.min.js"></script>
+  <script src="/assets/jquery.easytabs.min.js"></script>
+  <script src="/assets/main.js"></script>
+
+  <%= csrf_meta_tags %>
+</head>
+<body class="bg-fixed bg-1">
+   <div class="main-container">
+        <div class="main wrapper clearfix">
+            <div id="tab-container" class="tab-container">
+                    <ul class='etabs'>
+                          <li class='tab active' id="tab-about">
+                            <%= link_to root_path, class: "active" do %>
+                              <i class="icon-user"></i><span> About Me</span>
+                            <% end %>
+                          </li>
+                          <li class='tab'>
+                            <%= link_to @resume do %>
+                              <i class="icon-user"></i><span> Resume</span>
+                            <% end %>
+                          </li>
+                          <li class='tab'>
+                            <a href="#portfolio"><i class="icon-heart"></i><span> Portfolio</span></a>
+                          </li>
+                          <li class='tab'>
+                            <a href="#contact"><i class="icon-envelope"></i><span> Contact</span></a>
+                          </li>
+                      </ul>
+
+                      <div id="tab-data-wrap">
+                          <%= yield %>
+                      </div>
+              </div>
+        </div>
+  </div>
+
+
+</body>
+</html>
